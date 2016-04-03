@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+NC='\033[0m' # No Color
+
+CurrentBranch=$(git rev-parse --abbrev-ref HEAD)
+printf "\n             ${GREEN} ##################################################${NC}${ORANGE}BRANCH${NC}${GREEN}##############################################################${NC}\n"
+printf "${RED}$CurrentBranch${NC}"
+printf "\n \n \n"
+printf "\n             ${GREEN} ##################################################${NC}${ORANGE}STATUS${NC}${GREEN}##############################################################${NC}\n"
+git status
+printf "\n             ${GREEN} ##################################################${NC}${ORANGE}LOG${NC}${GREEN}#################################################################${NC}\n"
+git log --oneline
